@@ -1,0 +1,21 @@
+pkgname=naven
+pkgver=0.1.0
+pkgrel=1
+epoch=0
+pkgdesc="UnaveOS preset for calamares."
+arch=("x86_64")
+url="https://github.com/unaveos/naven"
+license=('GPL3')
+source=("git+https://github.com/unaveos/${pkgname}.git")
+validpgpkeys=()
+depends=()
+makedepends=('git')
+md5sums=('SKIP')
+
+package() {
+    local src="${srcdir}/${pkgname}/src"
+    local dest="${pkgdir}/etc/calamares"
+
+    mkdir -p $dest
+    cp -r "${src}/"* "${dest}"
+}
