@@ -1,0 +1,21 @@
+pkgname=orion
+pkgver=0.1.0
+pkgrel=1
+epoch=0
+pkgdesc="Minimalist theme for sddm."
+arch=("x86_64")
+url="https://github.com/unaveos/orion"
+license=('GPL3')
+source=("git+https://github.com/unaveos/${pkgname}.git")
+validpgpkeys=()
+depends=()
+makedepends=('git')
+md5sums=('SKIP')
+
+package() {
+    local src="${srcdir}/${pkgname}"
+    local dest="${pkgdir}/usr/share/sddm/themes/${pkgname}"
+
+    install -d  $dest
+    cp -r "${src}/"* "${dest}"
+}
