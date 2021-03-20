@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="250" alt="space logo" src="brand.svg"/>
+  <img alt="space logo" src="brand.svg"/>
 </div>
 
 <h3 align="center"> FlateOS packages mirror. </h3>
