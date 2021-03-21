@@ -1,0 +1,20 @@
+pkgname=tela-circle-icon-theme
+pkgver="$(date +%Y.%m.%d)"
+pkgrel=1
+epoch=0
+pkgdesc="A flat colorful design icon theme."
+arch=("x86_64")
+url="https://www.pling.com/p/1359276"
+license=('GPL3')
+source=("git+https://github.com/vinceliuice/${pkgname}.git")
+validpgpkeys=()
+depends=('hicolor-icon-theme' 'gtk-update-icon-cache')
+makedepends=('git')
+md5sums=('SKIP')
+
+package() {
+    local src="${srcdir}/${pkgname}"
+    local dest="${pkgdir}/usr/share/icons"
+
+    $src/install.sh -a -d $dest
+}
