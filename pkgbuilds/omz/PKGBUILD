@@ -1,0 +1,35 @@
+pkgname=omz
+pkgver="$(date +%Y.%m.%d)"
+pkgrel=1
+epoch=0
+pkgdesc="Presets for ZSH."
+arch=("x86_64")
+url="https://github.com/flateos"
+license=('GPL3')
+source=(
+    "git+https://github.com/ohmyzsh/ohmyzsh.git"
+    "git+https://github.com/zdharma/zinit.git"
+)
+validpgpkeys=()
+depends=('zsh' 'starship')
+makedepends=('git')
+md5sums=('SKIP'
+         'SKIP')
+
+_install() {
+    local src="${srcdir}/$1"
+    local dest="${pkgdir}/$2"
+
+    mkdir -p "${dest}"
+    install -D -m644 "${src}/$3" "${pkgdir}/usr/share/licenses/$1/LICENSE"
+    cp -r $src/* "${dest}/"
+}
+
+package() {
+    cd ..
+    install -Dm 644 ".zshrc.template" "${pkgdir}/etc/skel/.zshrc"
+    install -Dm 755 ".zshrc.template" "${pkgdir}/root/.zshrc"
+
+    _install "ohmyzsh" "usr/share/oh-my-zsh" "LICENSE.txt"
+    _install "zinit" "usr/share/zinit" "LICENSE"
+}
