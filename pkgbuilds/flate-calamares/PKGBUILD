@@ -1,11 +1,11 @@
-project=orion
+project=calamares
 pkgname=flate-$project
 pkgver="$(date +%Y.%m.%d)"
 pkgrel=1
 epoch=0
-pkgdesc="Minimalist theme for sddm."
+pkgdesc="FlateOS preset for calamares."
 arch=("x86_64")
-url="https://github.com/flateos/orion"
+url="https://github.com/flateos/naven"
 license=('GPL3')
 source=("git+https://github.com/flateos/${project}.git")
 validpgpkeys=()
@@ -14,9 +14,9 @@ makedepends=('git')
 md5sums=('SKIP')
 
 package() {
-    local src="${srcdir}/${project}"
-    local dest="${pkgdir}/usr/share/sddm/themes/${project}"
+    local src="${srcdir}/${project}/src"
+    local dest="${pkgdir}/etc/calamares"
 
-    install -d  $dest
+    mkdir -p $dest
     cp -r "${src}/"* "${dest}"
 }
