@@ -1,6 +1,6 @@
 project=omz
 pkgname=flate-$project
-pkgver="$(date +%Y.%m.%d)"
+pkgver=0.1.0
 pkgrel=1
 epoch=0
 pkgdesc="Presets for ZSH."

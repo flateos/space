@@ -1,11 +1,11 @@
 project=sddm
 pkgname=flate-$project
-pkgver="$(date +%Y.%m.%d)"
+pkgver=0.1.0
 pkgrel=1
 epoch=0
 pkgdesc="Minimalist theme for sddm."
 arch=("x86_64")
-url="https://github.com/flateos/orion"
+url="https://github.com/flateos/sddm"
 license=('GPL3')
 source=("git+https://github.com/flateos/${project}.git")
 validpgpkeys=()

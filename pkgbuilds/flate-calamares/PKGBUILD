@@ -1,11 +1,11 @@
 project=calamares
 pkgname=flate-$project
-pkgver="$(date +%Y.%m.%d)"
+pkgver=0.1.0
 pkgrel=1
 epoch=0
 pkgdesc="FlateOS preset for calamares."
 arch=("x86_64")
-url="https://github.com/flateos/naven"
+url="https://github.com/flateos/calamares"
 license=('GPL3')
 source=("git+https://github.com/flateos/${project}.git")
 validpgpkeys=()

@@ -1,6 +1,6 @@
 project=environ
 pkgname=flate-$project
-pkgver="$(date +%Y.%m.%d)"
+pkgver=0.1.0
 pkgrel=1
 epoch=0
 pkgdesc="WM's preset per environment."
@@ -18,7 +18,7 @@ package() {
 
     local etc_dir="$pkgdir/etc"
     local skel_dir="$etc_dir/skel/.config"
-    local bg_dir="$etc_dir/usr/share/backgrounds/flateos"
+    local bg_dir="$pkgdir/usr/share/backgrounds/flateos"
 
     mkdir -p $etc_dir $skel_dir $bg_dir
 
