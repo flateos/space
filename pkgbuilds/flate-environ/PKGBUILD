@@ -1,0 +1,26 @@
+project=environ
+pkgname=flate-$project
+pkgver="$(date +%Y.%m.%d)"
+pkgrel=1
+epoch=0
+pkgdesc="WM's preset per environment."
+arch=("x86_64")
+url="https://github.com/flateos/environ"
+license=('GPL3')
+source=("git+https://github.com/flateos/environ.git")
+validpgpkeys=()
+depends=('tela-circle-icon-theme' 'kitty' 'mako' 'rofi' 'sway' 'waybar')
+makedepends=('git')
+md5sums=('SKIP')
+
+package() {
+    cd $srcdir/$project
+
+    local dir_etc="$pkgdir/etc"
+    local dir_skel="$dir_etc/skel/.config"
+
+    mkdir -p $dir_etc $dir_skel
+
+    cp -r ./etc/* $dir_etc
+    cp -r ./skel/* $dir_skel
+}
