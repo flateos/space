@@ -1,2 +1,2 @@
-pkgbuilds/*/**.zst
+pkgbuilds/*/*[.zst,.tar.gz]
 pkgbuilds/*/**/
