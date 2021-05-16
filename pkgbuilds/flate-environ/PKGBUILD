@@ -16,11 +16,13 @@ md5sums=('SKIP')
 package() {
     cd $srcdir/$project
 
-    local dir_etc="$pkgdir/etc"
-    local dir_skel="$dir_etc/skel/.config"
+    local etc_dir="$pkgdir/etc"
+    local skel_dir="$etc_dir/skel/.config"
+    local bg_dir="$etc_dir/usr/share/backgrounds/flateos"
 
-    mkdir -p $dir_etc $dir_skel
+    mkdir -p $etc_dir $skel_dir $bg_dir
 
-    cp -r ./etc/* $dir_etc
-    cp -r ./skel/* $dir_skel
+    cp -r ./etc/* $etc_dir
+    cp -r ./skel/* $skel_dir
+    cp -r ./wallpapers/* $bg_dir
 }

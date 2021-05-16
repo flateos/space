@@ -1,19 +1,20 @@
-pkgname=naven
-pkgver=0.2.0
+project=naven
+pkgname=flate-$project
+pkgver="$(date +%Y.%m.%d)"
 pkgrel=1
 epoch=0
 pkgdesc="FlateOS preset for calamares."
 arch=("x86_64")
 url="https://github.com/flateos/naven"
 license=('GPL3')
-source=("git+https://github.com/flateos/${pkgname}.git")
+source=("git+https://github.com/flateos/${project}.git")
 validpgpkeys=()
 depends=()
 makedepends=('git')
 md5sums=('SKIP')
 
 package() {
-    local src="${srcdir}/${pkgname}/src"
+    local src="${srcdir}/${project}/src"
     local dest="${pkgdir}/etc/calamares"
 
     mkdir -p $dest

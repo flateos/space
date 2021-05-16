@@ -1,20 +1,21 @@
-pkgname=orion
-pkgver=0.2.0
+project=orion
+pkgname=flate-$project
+pkgver="$(date +%Y.%m.%d)"
 pkgrel=1
 epoch=0
 pkgdesc="Minimalist theme for sddm."
 arch=("x86_64")
 url="https://github.com/flateos/orion"
 license=('GPL3')
-source=("git+https://github.com/flateos/${pkgname}.git")
+source=("git+https://github.com/flateos/${project}.git")
 validpgpkeys=()
 depends=()
 makedepends=('git')
 md5sums=('SKIP')
 
 package() {
-    local src="${srcdir}/${pkgname}"
-    local dest="${pkgdir}/usr/share/sddm/themes/${pkgname}"
+    local src="${srcdir}/${project}"
+    local dest="${pkgdir}/usr/share/sddm/themes/${project}"
 
     install -d  $dest
     cp -r "${src}/"* "${dest}"

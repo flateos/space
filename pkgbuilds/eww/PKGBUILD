@@ -1,0 +1,22 @@
+pkgname=eww
+pkgver="$(date +%Y.%m.%d)"
+pkgrel=1
+epoch=0
+pkgdesc="Widgets for everyone!"
+arch=("x86_64")
+url="https://github.com/elkowar/eww"
+license=('GPL3')
+source=("git+https://github.com/elkowar/${pkgname}.git")
+validpgpkeys=()
+depends=()
+makedepends=('git' 'rust')
+md5sums=('SKIP')
+
+package() {
+    local src="${srcdir}/${pkgname}/src"
+
+    cd $src
+    cargo build --release --no-default-features --features=x11
+    cd target/release
+    install -D target/release/eww --target-directory "${pkgdir}/usr/bin" --mode 755
+}

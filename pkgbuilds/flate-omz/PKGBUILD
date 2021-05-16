@@ -1,4 +1,5 @@
-pkgname=omz
+project=omz
+pkgname=flate-$project
 pkgver="$(date +%Y.%m.%d)"
 pkgrel=1
 epoch=0
