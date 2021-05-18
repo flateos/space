@@ -1,6 +1,6 @@
 project=omz
 pkgname=flate-$project
-pkgver=0.1.0
+pkgver=0.2.0
 pkgrel=1
 epoch=0
 pkgdesc="Presets for ZSH."
@@ -29,7 +29,10 @@ _install() {
 package() {
     cd ..
     install -Dm 644 ".zshrc.template" "${pkgdir}/etc/skel/.zshrc"
+    install -Dm 644 ".zshenv.template" "${pkgdir}/etc/skel/.zshenv"
+
     install -Dm 755 ".zshrc.template" "${pkgdir}/root/.zshrc"
+    install -Dm 755 ".zshenv.template" "${pkgdir}/root/.zshenv"
 
     _install "ohmyzsh" "usr/share/oh-my-zsh" "LICENSE.txt"
     _install "zinit" "usr/share/zinit" "LICENSE"
