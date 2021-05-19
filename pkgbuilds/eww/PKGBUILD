@@ -1,5 +1,5 @@
 pkgname=eww
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 epoch=0
 pkgdesc="Widgets for everyone!"
@@ -14,6 +14,6 @@ md5sums=('SKIP')
 
 package() {
     cd $srcdir/$pkgname/src
-    cargo build --release --no-default-features --features=x11
+    cargo build --release --no-default-features --features=wayland
     install -D ../target/release/eww --target-directory "${pkgdir}/usr/bin" --mode 755
 }
