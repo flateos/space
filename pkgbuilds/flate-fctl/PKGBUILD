@@ -1,0 +1,18 @@
+project=fctl
+pkgname=flate-fctl
+pkgver=0.1.0
+pkgrel=1
+epoch=0
+pkgdesc="Environment manager for FlateOS."
+arch=("x86_64")
+url="https://github.com/flateos/${project}"
+license=('GPL3')
+source=("git+https://github.com/flateos/${project}.git")
+validpgpkeys=()
+depends=('sway')
+makedepends=('git')
+md5sums=('SKIP')
+
+package() {
+    install -D $srcdir/$project/fctl --target-directory "${pkgdir}/usr/bin" --mode 755
+}
