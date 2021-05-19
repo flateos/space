@@ -9,7 +9,7 @@ url="https://github.com/flateos/environ"
 license=('GPL3')
 source=("git+https://github.com/flateos/environ.git")
 validpgpkeys=()
-depends=('tela-circle-icon-theme' 'kitty' 'mako' 'rofi' 'sway' 'waybar')
+depends=('tela-circle-icon-theme' 'kitty' 'mako' 'rofi' 'sway' 'waybar', 'flate-fctl')
 makedepends=('git')
 md5sums=('SKIP')
 
