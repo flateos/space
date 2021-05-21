@@ -1,6 +1,6 @@
 project=fctl
 pkgname=flate-fctl
-pkgver=0.1.0
+pkgver=0.2.0
 pkgrel=1
 epoch=0
 pkgdesc="Environment manager for FlateOS."
@@ -10,12 +10,11 @@ license=('GPL3')
 source=("git+https://github.com/flateos/${project}.git")
 validpgpkeys=()
 depends=(
-    'sway' 'jq' 'grim' 'slurp' 'wl-copy' 'awk' 'sed' 'wf-recorder' 'pacman-contrib' 'grep'
-
+    'sway' 'jq' 'grim' 'slurp' 'awk' 'sed' 'wf-recorder' 'pacman-contrib' 'grep'
 )
 makedepends=('git')
 md5sums=('SKIP')
 
 package() {
-    install -D $srcdir/$project/fctl --target-directory "${pkgdir}/usr/bin" --mode 755
+    install -D -m755 $srcdir/$project/fctl.sh --target-directory "${pkgdir}/usr/bin"
 }

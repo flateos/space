@@ -22,8 +22,6 @@ set -eE
 
 declare -a PKGS=${@}
 
-pwd
-
 PKG_DIR=$PWD/space/pkgbuilds
 OUT_DIR=$PWD/space/x86_64
 
