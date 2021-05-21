@@ -32,7 +32,7 @@ function make_pkg() {
         printf "\n\nBuilding the package: $pkg\n\n"
 
         rm -rf $OUT_DIR/$pkg*
-        (cd "$PKG_DIR/$pkg" && makepkg -f)
+        (cd "$PKG_DIR/$pkg" && updpkgsums && makepkg)
     done
 
     mv $PKG_DIR/**/*pkg.tar.zst $OUT_DIR
