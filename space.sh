@@ -28,23 +28,17 @@ OUT_DIR=$PWD/space/x86_64
 function make_pkg() {
     for pkg in $PKGS; do
         printf "\n\nBuilding the package: $pkg\n\n"
-
-        rm -rf $OUT_DIR/$pkg*
-        (cd "$PKG_DIR/$pkg" && updpkgsums && makepkg)
+        cd "$PKG_DIR/$pkg" && updpkgsums && makepkg --sign -f
     done
-
-    mv $PKG_DIR/**/*pkg.tar.zst $OUT_DIR
 }
 
 function update_db() {
     rm -rf $OUT_DIR/space*
-    repo-add $OUT_DIR/space.db.tar.gz $OUT_DIR/*pkg.tar.zst
+    repo-add -s -v -n -R $OUT_DIR/space.db.tar.gz $OUT_DIR/*pkg.tar.zst
 }
 
 function main() {
-    if [ -n "$PKGS" ]; then
-        make_pkg
-    fi
+    [ -n "$PKGS" ] && make_pkg
 
     update_db
 
