@@ -16,5 +16,5 @@ package() {
     local src="${srcdir}/${pkgname}"
     local dest="${pkgdir}/usr/share/icons"
 
-    $src/install.sh -d $dest -n blue
+    $src/install.sh blue -d $dest
 }
