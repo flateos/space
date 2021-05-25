@@ -33,7 +33,6 @@ function make_pkg() {
 }
 
 function update_db() {
-    rm -rf $OUT_DIR/space*
     repo-add -s -v -n -R $OUT_DIR/space.db.tar.gz $OUT_DIR/*pkg.tar.zst
 }
 
