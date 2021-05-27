@@ -1,6 +1,6 @@
 project=fctl
 pkgname=flate-fctl
-pkgver=0.3.0
+pkgver=0.3.3
 pkgrel=1
 epoch=0
 pkgdesc="Environment manager for FlateOS."
@@ -16,5 +16,5 @@ makedepends=('git')
 md5sums=('SKIP')
 
 package() {
-    install -D -m755 $srcdir/$project/fctl.sh --target-directory "${pkgdir}/usr/bin"
+    install -D -m755 $srcdir/$project/fctl.sh "${pkgdir}/usr/bin/fctl"
 }

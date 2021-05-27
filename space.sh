@@ -28,7 +28,7 @@ OUT_DIR=$PWD/space/x86_64
 function make_pkg() {
     for pkg in $PKGS; do
         printf "\n\nBuilding the package: $pkg\n\n"
-        cd "$PKG_DIR/$pkg" && updpkgsums && makepkg --sign -f
+        cd "$PKG_DIR/$pkg" && updpkgsums && makepkg --sign -f -c
     done
 }
 
