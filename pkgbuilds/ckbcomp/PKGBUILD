@@ -1,5 +1,5 @@
 pkgname=ckbcomp
-pkgver=1.202
+pkgver=1.205
 pkgrel=1
 pkgdesc="Compile a XKB keyboard description to a keymap suitable for loadkeys or kbdcontrol"
 arch=(any)
@@ -13,4 +13,4 @@ package() {
     install -d ${pkgdir}/usr/bin/
     install -m755 Keyboard/ckbcomp ${pkgdir}/usr/bin/
 }
-md5sums=('8d889b970d449ecc5fecc2ce5527bd51')
+md5sums=('697907d596ff1a723fad644417a88418')

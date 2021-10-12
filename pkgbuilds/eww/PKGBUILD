@@ -1,5 +1,5 @@
 pkgname=eww
-pkgver=0.1.1
+pkgver=0.2.0
 pkgrel=1
 epoch=0
 pkgdesc="Widgets for everyone!"
@@ -13,7 +13,7 @@ makedepends=('git' 'rustup')
 md5sums=('SKIP')
 
 package() {
-    cd $srcdir/$pkgname/src
+    cd $srcdir/$pkgname
     cargo build --release --no-default-features --features=wayland
-    install -D ../target/release/eww --target-directory "${pkgdir}/usr/bin" --mode 755
+    install -D target/release/eww --target-directory "${pkgdir}/usr/bin" --mode 755
 }
