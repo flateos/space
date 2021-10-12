@@ -22,8 +22,8 @@ set -eE
 
 declare -a PKGS=${@}
 
-PKG_DIR=$PWD/space/pkgbuilds
-OUT_DIR=$PWD/space/x86_64
+PKG_DIR=$PWD/core/space/pkgbuilds
+OUT_DIR=$PWD/core/space/x86_64
 
 function make_pkg() {
     for pkg in $PKGS; do
