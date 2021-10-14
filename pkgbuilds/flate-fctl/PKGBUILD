@@ -1,6 +1,6 @@
 project=fctl
 pkgname=flate-fctl
-pkgver=0.3.3
+pkgver=0.3.4
 pkgrel=1
 epoch=0
 pkgdesc="Environment manager for FlateOS."
