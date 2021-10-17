@@ -1,6 +1,6 @@
 project=environ
 pkgname=flate-$project
-pkgver=0.2.0
+pkgver=0.3.0
 pkgrel=1
 epoch=0
 pkgdesc="WM's preset per environment."
@@ -9,7 +9,7 @@ url="https://github.com/flateos/environ"
 license=('GPL3')
 source=("git+https://github.com/flateos/environ.git")
 validpgpkeys=()
-depends=('tela-circle-icon-theme' 'kitty' 'mako' 'rofi' 'sway' 'flate-fctl')
+depends=('tela-circle-icon-theme' 'kitty' 'mako' 'rofi' 'sway' 'flate-fctl' 'waybar')
 makedepends=('git')
 md5sums=('SKIP')
 
